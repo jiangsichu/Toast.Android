@@ -2,9 +2,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jiangsichu.toast.MainActivity">
+
+    <!-- Search, should appear as action button if possible -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <!-- Settings, should always be in the overflow -->
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
 </menu>
