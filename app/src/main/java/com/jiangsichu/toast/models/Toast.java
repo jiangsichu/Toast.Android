@@ -1,7 +1,9 @@
 package com.jiangsichu.toast.models;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class Toast {
 
@@ -15,6 +17,14 @@ public class Toast {
         this.recipients = recipients;
         this.message = message;
         this.utcTimeStamp = utcTimeStamp;
+    }
+
+    public String getRecipientsString() {
+        String recipientStr = "";
+        for (Recipient recipient : recipients) {
+            recipientStr += (recipientStr.isEmpty() ? "" : ", ") + recipient.toString();
+        }
+        return recipientStr;
     }
 
 }
