@@ -34,7 +34,7 @@ proguard/
 
 # idea project files
 .idea/
-.idea/.name
+app/app.iml
 *.iml
 *.ipr
 *.iws
