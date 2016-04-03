@@ -5,11 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jiangsichu.toast.models.Toast;
 import com.jiangsichu.toast.services.FakeToastServiceImpl;
+import com.jiangsichu.toast.services.ToastAdapter;
 import com.jiangsichu.toast.services.ToastService;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class ToastsFragment extends Fragment {
 
-    private ArrayAdapter<Toast> toastAdapter;
+    private ToastAdapter toastAdapter;
     private ToastService toastService;
 
     public ToastsFragment() {
@@ -31,10 +31,9 @@ public class ToastsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        toastAdapter = new ArrayAdapter<Toast>(
+        toastAdapter = new ToastAdapter(
                 getActivity(),
                 R.layout.list_item_toast,
-                R.id.toast_message,
                 new ArrayList<Toast>()
         );
 

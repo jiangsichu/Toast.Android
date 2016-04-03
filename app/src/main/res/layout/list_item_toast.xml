@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/gutter_width">
 
     <TextView
-        android:id="@+id/toast_toaster"
+        android:id="@+id/textview_toaster"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:maxWidth="@dimen/list_item_toaster_max_width"
+        android:singleLine="true" />
 
     <TextView
-        android:text=" toasted "
+        android:id="@+id/textview_toasted"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gutter_width"
+        android:layout_marginRight="@dimen/gutter_width"
+        android:layout_toRightOf="@id/textview_toaster"
+        android:text="toasted" />
 
     <TextView
-        android:id="@+id/toast_toastee"
+        android:id="@+id/textview_toastee"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textview_toasted"
+        android:maxWidth="@dimen/list_item_toastee_max_width"
+        android:singleLine="true" />
+
+    <ImageView
+        android:id="@+id/imageview_hashes"
+        android:layout_width="@dimen/list_item_image_size"
+        android:layout_height="@dimen/list_item_image_size"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textview_toaster"
+        android:layout_marginRight="@dimen/gutter_width"
+        android:layout_marginTop="@dimen/gutter_width"
+        android:src="@mipmap/ic_launcher" />
+    <!-- TODO: replace the image placeholder with hash tag images/GIFs -->
 
     <TextView
-        android:id="@+id/toast_message"
+        android:id="@+id/textview_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/toast_toaster"/>
+        android:layout_alignTop="@id/imageview_hashes"
+        android:layout_toRightOf="@id/imageview_hashes" />
 
     <TextView
-        android:id="@+id/toast_date"
+        android:id="@+id/textview_date"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/imageview_hashes"
+        android:singleLine="true" />
 
 </RelativeLayout>
